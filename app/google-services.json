@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "407210691250",
+    "firebase_url": "https://hmooude-37c70-default-rtdb.firebaseio.com",
+    "project_id": "hmooude-37c70",
+    "storage_bucket": "hmooude-37c70.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407210691250:android:80bf0e5619fc4cd19897ab",
+        "android_client_info": {
+          "package_name": "com.samsung.android.security.v8"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl6iXu7gJ7wnGcVgFLNNHXbOdj6m294ws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
