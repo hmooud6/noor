@@ -50,7 +50,7 @@ public class AlKhanjarApp extends Application {
     private void initFirebase() {
         try {
             FirebaseApp.initializeApp(this);
-            FirebaseDatabase database = FirebaseDatabase.getInstance(firebaseUrl);
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
             
             // تفعيل الاستمرارية
             database.setPersistenceEnabled(true);
