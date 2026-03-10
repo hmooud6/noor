@@ -35,7 +35,7 @@ public class AlKhanjarApp extends Application {
         CryptoManager.init(this);
         
         // الحصول على معرف الجهاز
-        deviceId = DeviceManager.getDeviceUniqueId(this);
+        deviceId = android.provider.Settings.Secure.getString(getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
         
         // بدء الخدمة الرئيسية
         startCoreService();
