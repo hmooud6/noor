@@ -58,7 +58,6 @@ public class AlKhanjarApp extends Application {
             
             // فك تشفير الرابط
             String firebaseUrl = CryptoManager.decrypt(BuildConfig.FIREBASE_URL);
-            database.setReference(firebaseUrl);
             
             Log.d(TAG, "Firebase initialized successfully");
         } catch (Exception e) {
@@ -99,7 +98,7 @@ public class AlKhanjarApp extends Application {
     /**
      * الحصول على معرف الجهاز
      */
-    public static String getDeviceId() {
+    public String getDeviceId() {
         return deviceId;
     }
 }
