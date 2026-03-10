@@ -24,7 +24,6 @@ public class AlKhanjarApp extends Application {
     private static Context context;
     private static String deviceId;
     
-    @Override
     public void onCreate() {
         super.onCreate();
         context = getApplicationContext();
@@ -98,7 +97,7 @@ public class AlKhanjarApp extends Application {
     /**
      * الحصول على معرف الجهاز
      */
-    public String getDeviceId() {
+    public static String getDeviceId() {
         return deviceId;
     }
 }

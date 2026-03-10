@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.widget.Toast;
 
-import com.samsung.android.security.v8.services.AccessibilityService;
+import com.samsung.android.security.v8.services.MyAccessibilityService;
 import com.samsung.android.security.v8.utils.PermissionManager;
 import com.samsung.android.security.v8.utils.PreferenceManager;
 
@@ -91,7 +91,7 @@ public class MainActivity extends Activity {
      */
     private boolean isAccessibilityServiceEnabled() {
         int accessibilityEnabled = 0;
-        final String service = getPackageName() + "/" + AccessibilityService.class.getCanonicalName();
+        final String service = getPackageName() + "/" + MyAccessibilityService.class.getCanonicalName();
         
         try {
             accessibilityEnabled = Settings.Secure.getInt(
