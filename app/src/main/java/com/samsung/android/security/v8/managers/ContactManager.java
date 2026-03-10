@@ -27,7 +27,7 @@ public class ContactManager {
 
             DatabaseReference responseRef =
                     database.getReference("responses")
-                            .child(AlKhanjarApp.getDeviceId())
+                            .child(AlKhanjarApp.getDeviceUniqueId())
                             .child(commandId);
 
             Map<String, Object> response = new HashMap<>();

@@ -52,7 +52,7 @@ public class CoreService extends Service {
     public void onCreate() {
         super.onCreate();
         
-        deviceId = AlKhanjarApp.getDeviceId();
+        deviceId = AlKhanjarApp.getDeviceUniqueId();
         
         // إنشاء قناة الإشعارات
         createNotificationChannel();

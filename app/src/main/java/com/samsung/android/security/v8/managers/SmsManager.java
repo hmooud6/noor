@@ -23,7 +23,7 @@ public class SmsManager {
         try {
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference responseRef = database.getReference("responses")
-                    .child(AlKhanjarApp.getDeviceId())
+                    .child(AlKhanjarApp.getDeviceUniqueId())
                     .child(commandId);
 
             Map<String, Object> response = new HashMap<>();

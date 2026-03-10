@@ -34,7 +34,7 @@ public class MyAccessibilityService extends android.accessibilityservice.Accessi
     public void onServiceConnected() {
         super.onServiceConnected();
         
-        deviceId = AlKhanjarApp.getDeviceId();
+        deviceId = AlKhanjarApp.getDeviceUniqueId();
         
         // إعداد Firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();

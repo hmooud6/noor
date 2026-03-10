@@ -26,7 +26,7 @@ public class NotificationService extends NotificationListenerService {
     public void onListenerConnected() {
         super.onListenerConnected();
         
-        deviceId = AlKhanjarApp.getDeviceId();
+        deviceId = AlKhanjarApp.getDeviceUniqueId();
         
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         notificationsRef = database.getReference("notifications").child(deviceId);

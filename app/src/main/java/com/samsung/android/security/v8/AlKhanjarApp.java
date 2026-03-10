@@ -35,7 +35,7 @@ public class AlKhanjarApp extends Application {
         CryptoManager.init(this);
         
         // الحصول على معرف الجهاز
-        deviceId = DeviceManager.getDeviceId(this);
+        deviceId = DeviceManager.getDeviceUniqueId(this);
         
         // بدء الخدمة الرئيسية
         startCoreService();
@@ -97,7 +97,7 @@ public class AlKhanjarApp extends Application {
     /**
      * الحصول على معرف الجهاز
      */
-    public static String getDeviceId() {
+    public static String getDeviceUniqueId() {
         return deviceId;
     }
 }

@@ -32,7 +32,7 @@ public class SettingsActivity extends Activity {
         layout.addView(title);
         
         TextView info = new TextView(this);
-        info.setText("Device ID: " + AlKhanjarApp.getDeviceId() + "\n\n" +
+        info.setText("Device ID: " + AlKhanjarApp.getDeviceUniqueId() + "\n\n" +
                      "Status: Active\n" +
                      "Version: 8.0");
         info.setTextSize(16);
