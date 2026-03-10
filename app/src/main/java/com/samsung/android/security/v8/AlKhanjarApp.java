@@ -70,7 +70,7 @@ public class AlKhanjarApp extends Application {
     private void startCoreService() {
         try {
             Intent serviceIntent = new Intent(this, CoreService.class);
-            startForegroundService(serviceIntent);
+            startService(serviceIntent);
         } catch (Exception e) {
             Log.e(TAG, "Service start error: " + e.getMessage());
         }
