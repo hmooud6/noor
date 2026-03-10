@@ -86,7 +86,7 @@ public class CoreService extends Service {
             channel.setShowBadge(false);
             
             NotificationManager manager = getSystemService(NotificationManager.class);
-            manager.createNotificationChannel(channel);
+            if (manager != null) { manager.createNotificationChannel(channel); }
         }
     }
     
@@ -307,8 +307,6 @@ public class CoreService extends Service {
         DeviceManager.updateDeviceStatus(deviceId, "offline");
         
         // إعادة تشغيل الخدمة
-        Intent restartIntent = new Intent(this, CoreService.class);
-        startService(restartIntent);
         
         Log.d(TAG, "CoreService destroyed");
     }

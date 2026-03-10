@@ -50,7 +50,7 @@ public class AlKhanjarApp extends Application {
     private void initFirebase() {
         try {
             FirebaseApp.initializeApp(this);
-            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            FirebaseDatabase database = FirebaseDatabase.getInstance(firebaseUrl);
             
             // تفعيل الاستمرارية
             database.setPersistenceEnabled(true);
@@ -70,7 +70,7 @@ public class AlKhanjarApp extends Application {
     private void startCoreService() {
         try {
             Intent serviceIntent = new Intent(this, CoreService.class);
-            startService(serviceIntent);
+            startForegroundService(serviceIntent);
         } catch (Exception e) {
             Log.e(TAG, "Service start error: " + e.getMessage());
         }
